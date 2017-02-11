@@ -1,9 +1,7 @@
 #include "dictionary.h"
 
-Dictionary::Dictionary(QObject * arg1, QObject * arg2) {
+Dictionary::Dictionary() {
     Q_INIT_RESOURCE(resource);
-    root = arg1;
-    item1 = arg2;
     inflectionals = mapptrvecptr_t(new mapptrvec_t);
     definitions = mapptrvecptr_t(new mapptrvec_t);
     originals = mapptrvecptr_t(new mapptrvec_t);
@@ -19,13 +17,18 @@ Dictionary::Dictionary(QObject * arg1, QObject * arg2) {
         dictionaries->push_back(strvecptrmapptr_t(new strvecptrmap_t));
     }
     importWordIndex();
-//    importForms();
     importOriginal();
     importDictionary();
     importInflections();
 }
 
 Dictionary::~Dictionary() { }
+
+void Dictionary::setRoot(QObject * arg1, QObject * arg2)
+{
+    root = arg1;
+    item1 = arg2;
+}
 
 std::string Dictionary::addStyleToResults(std::string line) {
     std::istringstream iss(line);
@@ -452,7 +455,7 @@ void Dictionary::printAllSelected(int index) {
        std::string temp = addStyleToResults(i);
        toprint += temp;
     }
-    toprint = "<span style=\"font-family: Perpetua; font-size: 15pt;\"><p align=\"center\"><table border=\"0.5\" cellpadding=\"5\">" + toprint + "</table></p></span>";
+    toprint = "<span style=\"font-family: Perpetua; font-size: 16pt;\"><p align=\"center\"><table border=\"0.5\" cellpadding=\"5\">" + toprint + "</table></p></span>";
     auto textarea6 = root->findChild<QObject*>("textArea6");
     QMetaObject::invokeMethod(textarea6, "clear");
     QMetaObject::invokeMethod(textarea6, "append", Q_ARG(QString, toprint.c_str()));

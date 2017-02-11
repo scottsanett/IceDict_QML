@@ -85,6 +85,7 @@ Item {
         }
         ScrollBar.vertical: ScrollBar {
         }
+        ScrollBar.horizontal: ScrollBar {}
     }
     ListModel {
         id: alterList

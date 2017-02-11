@@ -41,9 +41,9 @@ Item {
         x: 0
         y: 0
         anchors.rightMargin: 10
-        anchors.leftMargin: 120
+        anchors.leftMargin: 10
         anchors.bottomMargin: 0
-        anchors.topMargin: 70
+        anchors.topMargin: 150
         anchors.fill: parent
         Layout.fillHeight: false
         Layout.fillWidth: false
@@ -56,22 +56,20 @@ Item {
             textFormat: Text.RichText
             readOnly: true
             font.family: "Perpetua"
-//            wrapMode: Text.WordWrap
         }
         ScrollBar.vertical: ScrollBar {}
-        ScrollBar.horizontal: ScrollBar {}
     }
 
     ListView {
         id: listView6
         objectName: "listView6"
-        anchors.right: flickable6.left
-        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        anchors.bottom: flickable6.top
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.rightMargin: 10
         anchors.leftMargin: 10
-        anchors.bottomMargin: 0
+        anchors.bottomMargin: 10
         anchors.topMargin: 70
         Layout.fillWidth: true
         Layout.fillHeight: true

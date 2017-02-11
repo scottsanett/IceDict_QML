@@ -2,9 +2,8 @@
     <qresource prefix="/">
         <file>alphabet/perpetua.ttf</file>
         <file>alphabet/segoeui.ttf</file>
-        <file>alphabet/cover.jpg</file>
         <file>alphabet/icon.ico</file>
-        <file>alphabet/forms</file>
+        <file>alphabet/cover.jpg</file>
         <file>alphabet/zoega</file>
         <file>alphabet/vifgusson</file>
         <file>alphabet/wordindex</file>

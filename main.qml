@@ -5,9 +5,9 @@ import QtQuick.Layouts 1.0
 ApplicationWindow {
     FontLoader { id: perpetua; source: "qrc:/alphabet/perpetua.ttf" }
     FontLoader { id: segoe; source: "qrc:/alphabet/segoeui.ttf" }
-    visible: true
     width: 500
     height: 800
+    visible: true
     title: qsTr("Icelandic Dictionary")
 
     SwipeView {
@@ -21,6 +21,7 @@ ApplicationWindow {
         Page5 {}
         Page6 {}
     }
+
 
     footer: TabBar {
         id: tabBar

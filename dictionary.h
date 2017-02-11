@@ -37,8 +37,9 @@ class Dictionary: public QObject
 {
     Q_OBJECT
 public:
-    Dictionary(QObject * arg1, QObject * arg2);
+    Dictionary();
     ~Dictionary();
+    void setRoot(QObject*, QObject*);
 
 public slots:
     void loadPageDefinition();

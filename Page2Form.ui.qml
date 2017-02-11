@@ -48,8 +48,6 @@ Item {
         anchors.bottomMargin: 0
         anchors.topMargin: 70
         anchors.fill: parent
-        Layout.fillHeight: false
-        Layout.fillWidth: false
         TextArea.flickable: TextArea {
             id: textArea2
             objectName: "textArea2"
@@ -64,10 +62,11 @@ Item {
         ScrollBar.vertical: ScrollBar {
         }
     }
-
     ListView {
         id: listView2
         objectName: "listView2"
+        height: parent.height
+        width: parent.width
         anchors.right: flickable2.left
         anchors.bottom: parent.bottom
         anchors.left: parent.left
@@ -86,8 +85,7 @@ Item {
             opacity: 0.3
             focus: true
         }
-        ScrollBar.vertical: ScrollBar {
-        }
+        ScrollBar.vertical: ScrollBar {}
     }
     ListModel {
         id: alterList2

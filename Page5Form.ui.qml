@@ -54,9 +54,7 @@ Item {
             textFormat: Text.RichText
             readOnly: true
             font.family: "Perpetua"
-            wrapMode: Text.WordWrap
         }
-        ScrollBar.vertical: ScrollBar {
-        }
+        ScrollBar.vertical: ScrollBar { }
     }
 }

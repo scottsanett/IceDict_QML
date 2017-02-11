@@ -9,9 +9,10 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
+    Dictionary dic;
     QObject * mainApp = engine.rootObjects().first(); //access the root item
     QObject * item1 = mainApp->findChild<QObject*>("item1"); //access a specific item
-    Dictionary dic(mainApp, item1);
+    dic.setRoot(mainApp, item1);
     QObject::connect(item1, SIGNAL(onlineDefSig(QString)),
                      &dic, SLOT(onlineDefinition(QString)));
     QObject::connect(item1, SIGNAL(onlineDefClickedSig(int)),
